@@ -169,12 +169,13 @@ git checkout -- [đường dẫn/tên file]
 ```js
 git reset --soft HEAD~1
 
-Ở đây HEAD~1 nghĩa là trước 1 commit. Mình dùng soft để lưu 
-lại những thay đổi chưa commit và chỉ bỏ đi phần đã commit từ
-lần trước
+Ở đây HEAD~1 nghĩa là trước 1 commit. HEAD~2 là undo 2 commit.
+Mình dùng soft để lưu lại những thay đổi trước khi commit. Nghĩa là quay về bước add file.
+Ta có thể dùng git reset <file> để về bước trước khi add file
 ```
 
-- Nếu muốn bỏ cả phần đã commit từ lần trước và phần chưa commit thì đổi soft thành hard
+- Nếu muốn bỏ cả phần đã commit từ lần trước và phần chưa commit thì đổi soft thành hard.
+- Tức là xóa tất cả các thay đổi. Xóa đi các đối ứng, nên chú ý khi dùng lệnh này kẻo mất file.
 ```js
 git reset --hard HEAD~1
 ```
